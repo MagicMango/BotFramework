@@ -19,6 +19,7 @@ namespace BotTestConsole
         public IWrappedKernel Bind<Tinterface, Timplementation>() where Timplementation : Tinterface
         {
             kernel.Bind<Tinterface>().To<Timplementation>();
+            return this;
         }
 
         public Tinstance GetInstance<Tinstance>()
