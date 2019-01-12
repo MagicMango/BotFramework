@@ -10,7 +10,7 @@ namespace BotCore.Model
         public HatePhrases GetRandomHatePhrase()
         {
             Random randomGenerator = new Random(DateTime.Now.Millisecond);
-            int randomNumber = randomGenerator.Next(0, context.HatePhrases.Count() - 1);
+            int randomNumber = randomGenerator.Next(0, context.HatePhrases.Count());
             return context.HatePhrases.ToArray()[randomNumber];
         }
     }

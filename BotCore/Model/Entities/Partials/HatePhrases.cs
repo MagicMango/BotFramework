@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BotCore.Model.Entities
 {
-    public partial class LovePhrases
+    public partial class HatePhrases
     {
-        public LovePhrases()
+        public HatePhrases()
         {
             Phrase = "There are no entries in db for {0} and {1}.";
         }

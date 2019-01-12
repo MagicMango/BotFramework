@@ -97,6 +97,7 @@
     <Compile Include="Model\Entities\LovePhrases.cs">
       <DependentUpon>BotModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Entities\Partials\HatePhrases.cs" />
     <Compile Include="Model\Entities\Partials\LovePhrases.cs" />
     <Compile Include="Model\LoveMockupRepository.cs" />
     <Compile Include="Model\HateRepository.cs" />
