@@ -27,7 +27,7 @@ namespace BotCore.Controller
             using (repository)
             {
                 Random randomGenerator = new Random(DateTime.Now.Millisecond);
-                int randomNumber = randomGenerator.Next(0, HateSeeker.Length - 1);
+                int randomNumber = randomGenerator.Next(0, HateSeeker.Length);
                 return string.Format((repository.GetRandomHatePhrase() ?? new HatePhrases()).Phrase, username, HateSeeker[randomNumber]);
             }
         }

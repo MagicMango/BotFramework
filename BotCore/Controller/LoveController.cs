@@ -27,7 +27,7 @@ namespace BotCore.Controller
             using (repository)
             {
                 Random randomGenerator = new Random(DateTime.Now.Millisecond);
-                int randomNumber = randomGenerator.Next(0, loveSeeker.Length - 1);
+                int randomNumber = randomGenerator.Next(0, loveSeeker.Length);
                 return string.Format((repository.GetRandomLovePhrase() ?? new LovePhrases()).Phrase, username, loveSeeker[randomNumber]);
             }
         }
