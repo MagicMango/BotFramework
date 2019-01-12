@@ -1,10 +1,10 @@
-﻿using BotCore;
+﻿using BotCore.DependencyInjection;
 using BotCore.Interfaces;
 using BotCore.Interfaces.Repository;
 using BotCore.Model;
 using DiscordBotCore.Handler;
-using Ninject;
 using System;
+using TwitchBot;
 
 namespace BotTestConsole
 {
@@ -12,11 +12,12 @@ namespace BotTestConsole
     {
         static void Main(string[] args)
         {
-            IWrappedKernel wrapper = new NinjectWrapper(new StandardKernel())
-                .Bind<ILoveRepository, LoveRepository>();
+            IWrappedKernel wrapper = new MangoKernel()
+                .Bind<ILoveRepository, LoveRepository>()
+                .Bind<IHateRepository, HateRepository>();
             ServiceLocator.SetKernel(wrapper);
-
             ChannelHandler h = new ChannelHandler();
+            Bot b = new Bot();
             var t = h.GetBot;
             t.Wait();
             Console.ReadKey();

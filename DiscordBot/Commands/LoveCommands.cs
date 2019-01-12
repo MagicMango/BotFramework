@@ -2,7 +2,6 @@
 using DiscordBot.Interfaces;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -18,9 +17,7 @@ namespace DiscordBot.Commands
             if (loveSeeker.Count() > 0)
             {
                 LoveController loveController = new LoveController();
-                Random randomGenerator = new Random(DateTime.Now.Millisecond);
-                int randomNumber = randomGenerator.Next(0, loveSeeker.Length - 1);
-                await ctx.RespondAsync(string.Format(loveController.GetRandomLovePhrase(), ctx.Member.Username, loveSeeker[randomNumber].Username));
+                await ctx.RespondAsync(loveController.GetRandomLovePhrase(ctx.Member.Username, loveSeeker.Select(x=>x.Username).ToArray()));
             }
             else
             {

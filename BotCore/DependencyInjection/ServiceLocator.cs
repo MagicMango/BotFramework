@@ -1,6 +1,6 @@
 ﻿using BotCore.Interfaces;
 
-namespace BotCore
+namespace BotCore.DependencyInjection
 {
     public static class ServiceLocator
     {
@@ -14,12 +14,12 @@ namespace BotCore
             }
         }
 
-        public static T GetInstance<T>()
+        public static T GetInstance<T>() where T: IBase
         {
             return kernel.GetInstance<T>();
         }
 
-        public static void Bind<Tinterface, Timplementation>() where Timplementation : Tinterface
+        public static void Bind<Tinterface, Timplementation>() where Timplementation : Tinterface, new()
         {
             kernel.Bind<Tinterface, Timplementation>();
         } 

@@ -3,8 +3,8 @@ using System;
 
 namespace BotCore.Interfaces.Repository
 {
-    public interface ILoveRepository: IDisposable, IBase
+    public interface IHateRepository: IDisposable, IBase
     {
-        LovePhrases GetRandomLovePhrase();
+        HatePhrases GetRandomHatePhrase();
     }
 }

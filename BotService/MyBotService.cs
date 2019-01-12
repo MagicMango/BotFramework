@@ -1,30 +1,29 @@
-﻿using BotCore;
+﻿using BotCore.DependencyInjection;
 using BotCore.Interfaces;
 using BotCore.Interfaces.Repository;
 using BotCore.Model;
-using BotTestConsole;
 using DiscordBotCore.Handler;
-using Ninject;
 using System.ServiceProcess;
+using TwitchBot;
 
 namespace BotService
 {
-    public partial class Service1 : ServiceBase
+    public partial class MyBotService : ServiceBase
     {
-        public Service1()
+        public MyBotService()
         {
             InitializeComponent();
         }
 
         protected override void OnStart(string[] args)
         {
-            IWrappedKernel wrapper = new NinjectWrapper(new StandardKernel())
-                .Bind<ILoveRepository, LoveRepository>();
+            IWrappedKernel wrapper = new MangoKernel()
+                .Bind<ILoveRepository, LoveRepository>()
+                .Bind<IHateRepository, HateRepository>(); 
             ServiceLocator.SetKernel(wrapper);
-
             ChannelHandler h = new ChannelHandler();
             var t = h.GetBot;
-            t.Wait();
+            var b = new Bot();
         }
 
         protected override void OnStop()

@@ -26,5 +26,6 @@ namespace BotCore.Model.Entities
         }
     
         public virtual DbSet<LovePhrases> LovePhrases { get; set; }
+        public virtual DbSet<HatePhrases> HatePhrases { get; set; }
     }
 }

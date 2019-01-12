@@ -1,4 +1,5 @@
-﻿using DiscordBot.Interfaces;
+﻿using BotCore.Util;
+using DiscordBot.Interfaces;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Exceptions;
@@ -25,7 +26,7 @@ namespace DiscordBotCore.Handler
         {
             var cfg = new DiscordConfiguration
             {
-                Token = "[token]",
+                Token = ConfigReader.GetStringValue("mybotservice:discordbot:apitoken"),
                 TokenType = TokenType.Bot,
 
                 AutoReconnect = true,
@@ -113,7 +114,7 @@ namespace DiscordBotCore.Handler
                 // finally, let's connect and log in
                 await this.Client.ConnectAsync();
             }
-            catch (Exception e)
+            catch
             {
 
             }

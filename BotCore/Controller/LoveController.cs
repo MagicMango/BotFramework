@@ -1,5 +1,7 @@
-﻿using BotCore.Interfaces.Repository;
+﻿using BotCore.DependencyInjection;
+using BotCore.Interfaces.Repository;
 using BotCore.Model.Entities;
+using System;
 
 namespace BotCore.Controller
 {
@@ -9,7 +11,7 @@ namespace BotCore.Controller
 
         public LoveController()
         {
-            this.repository = ServiceLocator.GetInstance<ILoveRepository>();
+            repository = ServiceLocator.GetInstance<ILoveRepository>();
         }
 
         public string GetRandomLovePhrase()
@@ -17,6 +19,16 @@ namespace BotCore.Controller
             using (repository)
             {
                 return (repository.GetRandomLovePhrase() ?? new LovePhrases()).Phrase;
+            }
+        }
+
+        public string GetRandomLovePhrase(string username, string [] loveSeeker)
+        {
+            using (repository)
+            {
+                Random randomGenerator = new Random(DateTime.Now.Millisecond);
+                int randomNumber = randomGenerator.Next(0, loveSeeker.Length - 1);
+                return string.Format((repository.GetRandomLovePhrase() ?? new LovePhrases()).Phrase, username, loveSeeker[randomNumber]);
             }
         }
     }

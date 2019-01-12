@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotService", "BotService\Bo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotTestConsole", "BotTestConsole\BotTestConsole.csproj", "{DD114B46-652E-4CF7-9BE8-2820B345D136}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyBotServiceInstaller", "MyBotServiceInstaller\MyBotServiceInstaller.vdproj", "{44105A9F-E743-4A1B-8EE2-FBECAF2F4D78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,8 @@ Global
 		{DD114B46-652E-4CF7-9BE8-2820B345D136}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD114B46-652E-4CF7-9BE8-2820B345D136}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD114B46-652E-4CF7-9BE8-2820B345D136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44105A9F-E743-4A1B-8EE2-FBECAF2F4D78}.Debug|Any CPU.ActiveCfg = Debug
+		{44105A9F-E743-4A1B-8EE2-FBECAF2F4D78}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
