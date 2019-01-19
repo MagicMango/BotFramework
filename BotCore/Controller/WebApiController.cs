@@ -6,6 +6,10 @@ namespace BotCore.Controller
 {
     public static class WebApiController
     {
+        /// <summary>
+        /// Get a random Chuck Norris joke from url: https://api.chucknorris.io/jokes/random
+        /// </summary>
+        /// <returns></returns>
         public static string GetRandomChuckNorrrisJoke()
         {
             Task<string> t = Task.Run(async () =>

@@ -17,11 +17,11 @@ namespace BotCore.Models.Handler
         private static string[] colors = new string[] { "D60270", "FFEE8A", "ACCB52", "0038A8", "EE1289", "FF83FA", "CD9B1D", "7EC0EE" };
 
         /// <summary>
-        /// 
+        /// Change light of Hue lamp to specified color and mode
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="color"></param>
-        /// <param name="mode"></param>
+        /// <param name="id">Hue id of the lamp</param>
+        /// <param name="color">HEXcoded Color</param>
+        /// <param name="mode">blink, normal or disco</param>
         /// <returns></returns>
         public HueHandlerMessage ControlLight(int id, string color, string mode)
         {

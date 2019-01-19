@@ -11,25 +11,12 @@ namespace WebServer.Model
         public Func<object, object> Callback { get; set; }
         public Route(string path, Func<HttpListenerRequest, string> method, string type = MethodType.GET, Func<object, object> callback = null)
         {
-            if (path != null)
-            {
-                Path = path;
-            }
-            else
-            {
-                throw new ArgumentException("path cannot be null or empty.");
-            }
-            if (method != null)
-            {
-                Method = method;
-            }
-            else
-            {
-                throw new ArgumentException("method cannot be null.");
-            }
+            Path = path ?? throw new ArgumentException("path cannot be null.");
+            Method = method ?? throw new ArgumentException("method cannot be null.");
             Type = type;
             Callback = callback;
         }
+
         public static class MethodType
         {
             public const string GET = "GET";

@@ -17,7 +17,14 @@ namespace WebServer.HttpCore
         private readonly HttpListener _listener = new HttpListener();
         private readonly Dictionary<string, Route> Routes = new Dictionary<string, Route>();
         private static Route NotFound;
-
+        /// <summary>
+        /// Will initialise a webserver with the provided routes
+        /// </summary>
+        /// <param name="routes">List of Post and Get routes</param>
+        /// <param name="notFound">a not found route</param>
+        /// <param name="baseUrl">Base url which the webserver is listening to. Initialised with http://localhost</param>
+        /// <param name="port">Port of the application standard: 1337</param>
+        /// <param name="publicFolder">Public folder for static files initialised with public</param>
         public SimpleWebServer(List<Route> routes, Route notFound ,string baseUrl = "http://localhost", int port = 1337, string publicFolder = "public")
         {
             NotFound = notFound;
@@ -26,18 +33,11 @@ namespace WebServer.HttpCore
                 throw new NotSupportedException(
                     "Needs Windows XP SP2, Server 2003 or later.");
 
-            // URI prefixes are required, for example 
-            // "http://localhost:8080/index/".
-            //if (prefixes == null || prefixes.Length == 0)
-            //    throw new ArgumentException("prefixes");
-
-            // A responder method is required
-            //if (method == null)
-            //    throw new ArgumentException("method");
             foreach (var item in routes)
             {
                 Routes.Add(((item.Path=="")?"/":item.Path) + ":" + item.Type, item);
             }
+
             foreach (KeyValuePair<string, Route> route in Routes)
             {
                 if (route.Value.Path.StartsWith("http://") || route.Value.Path.StartsWith("https://"))
@@ -52,6 +52,7 @@ namespace WebServer.HttpCore
             }
             _listener.Start();
         }
+
         public void Run()
         {
             ThreadPool.QueueUserWorkItem((o) =>
@@ -102,6 +103,12 @@ namespace WebServer.HttpCore
                 catch { } // suppress any exceptions
             });
         }
+        /// <summary>
+        /// Handles a Post request.
+        /// Will turn all parameters into an ExpandoObject and will call the Callbackfunction with that object.
+        /// </summary>
+        /// <param name="r">route which caused the Post <see cref="Route"/></param>
+        /// <param name="ctx">Http context <see cref="HttpListenerContext"/></param>
         private void HandlePostMethod(Route r, HttpListenerContext ctx)
         {
             using (var reader = new StreamReader(ctx.Request.InputStream, ctx.Request.ContentEncoding))
@@ -116,6 +123,11 @@ namespace WebServer.HttpCore
                 r.Callback?.Invoke(objectValues);
             }
         }
+        /// <summary>
+        /// Will serve a static file from the folder defined with public
+        /// </summary>
+        /// <param name="ctx"><see cref="HttpListenerContext"/></param>
+        /// <returns></returns>
         private bool HandleStaticMethod(HttpListenerContext ctx)
         {
             if (File.Exists(PublicUrl + ctx.Request.RawUrl))
@@ -129,6 +141,12 @@ namespace WebServer.HttpCore
             }
             return false;
         }
+        /// <summary>
+        /// Will determine the fileType based on extension.
+        /// eg. file.json -> application/json
+        /// </summary>
+        /// <param name="rawUrl">relative path of the requested file</param>
+        /// <returns></returns>
         private string GetcontentType(string rawUrl)
         {
             String dataType = "text/plain";
@@ -147,6 +165,11 @@ namespace WebServer.HttpCore
             else if (rawUrl.EndsWith(".json")) dataType = "application/json";
             return dataType;
         }
+        /// <summary>
+        /// will handle the defined GET method
+        /// </summary>
+        /// <param name="r">route which caused the calling</param>
+        /// <param name="ctx"><see cref="HttpListenerContext"/></param>
         private void HandleGetMethod(Route r, HttpListenerContext ctx)
         {
             string rstr = r.Method.Invoke(ctx.Request);

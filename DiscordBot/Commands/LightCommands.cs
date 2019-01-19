@@ -2,7 +2,6 @@
 using DiscordBot.Interfaces;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DiscordBot.Commands

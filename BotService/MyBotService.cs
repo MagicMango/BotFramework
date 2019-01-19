@@ -4,7 +4,6 @@ using BotCore.Interfaces.Repository;
 using BotCore.Model;
 using DiscordBotCore.Handler;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.ServiceProcess;
 using TwitchBot;
 using WebServer.Handler;
@@ -37,7 +36,7 @@ namespace BotService
             handler.Start();
         }
 
-        public static object SaveConfiguration(object conf)
+        private static object SaveConfiguration(object conf)
         {
             dynamic dconf = conf;
             UglyStuff.ChangeSetting("mybotservice:twitchbot:channelname", dconf?.TwitchBotChannelName);
