@@ -89,6 +89,16 @@
       <Project>{D02DF8CF-1C09-4E78-AE70-ED2E53E9BEC9}</Project>
       <Name>TwitchBot</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebServer\WebServer.csproj">
+      <Project>{0CC67E22-E32B-4EE4-9E5B-EF79651529EA}</Project>
+      <Name>WebServer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="public\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

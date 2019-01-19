@@ -33,6 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
@@ -75,6 +76,10 @@
     <ProjectReference Include="..\TwitchBot\TwitchBot.csproj">
       <Project>{D02DF8CF-1C09-4E78-AE70-ED2E53E9BEC9}</Project>
       <Name>TwitchBot</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebServer\WebServer.csproj">
+      <Project>{0CC67E22-E32B-4EE4-9E5B-EF79651529EA}</Project>
+      <Name>WebServer</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
