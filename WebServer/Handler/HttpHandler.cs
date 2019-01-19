@@ -15,7 +15,6 @@ namespace WebServer.Handler
 
         public void Start()
         {
-            Console.WriteLine("A simple webserver. Press a key to quit.");
             ws.Run();
         }
 

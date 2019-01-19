@@ -21,7 +21,6 @@ namespace BotService
 
         protected override void OnStart(string[] args)
         {
-            Debugger.Launch();
             IWrappedKernel wrapper = new MangoKernel()
                 .Bind<ILoveRepository, LoveRepository>()
                 .Bind<IHateRepository, HateRepository>(); 
@@ -45,6 +44,8 @@ namespace BotService
             UglyStuff.ChangeSetting("mybotservice:twitchbot:username", dconf?.TwitchBotName);
             UglyStuff.ChangeSetting("mybotservice:twitchbot:apitoken", dconf?.TwitchBotKey);
             UglyStuff.ChangeSetting("mybotservice:discordbot:apitoken", dconf?.DiscrodBotKey);
+            UglyStuff.ChangeSetting("mybotservice:hue:token", dconf?.DiscrodBotKey);
+            UglyStuff.ChangeSetting("mybotservice:hue:ip", dconf?.DiscrodBotKey);
             return null;
         }
 

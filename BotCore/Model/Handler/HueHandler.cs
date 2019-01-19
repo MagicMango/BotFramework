@@ -1,4 +1,5 @@
-﻿using Q42.HueApi;
+﻿using BotCore.Util;
+using Q42.HueApi;
 using Q42.HueApi.ColorConverters;
 using Q42.HueApi.ColorConverters.Original;
 using Q42.HueApi.Interfaces;
@@ -25,8 +26,8 @@ namespace BotCore.Models.Handler
         public HueHandlerMessage ControlLight(int id, string color, string mode)
         {
             int cnt = 0;
-            ILocalHueClient client = new LocalHueClient("[ip]");
-            client.Initialize("[token]");
+            ILocalHueClient client = new LocalHueClient(ConfigReader.GetStringValue("mybotservice:hue:ip"));
+            client.Initialize(ConfigReader.GetStringValue("mybotservice:hue:token"));
             var command = new LightCommand();
             switch (mode)
             {
@@ -44,9 +45,9 @@ namespace BotCore.Models.Handler
             {
                 command
                     .TurnOn()
-                    .SetColor(new RGBColor(color));
-
-                cnt += 2;
+                    .SetColor(new RGBColor(color))
+                    .Brightness = 255;
+                cnt += 3;
             }
             catch (Exception e)
             {
@@ -73,6 +74,7 @@ namespace BotCore.Models.Handler
                 var command = new LightCommand();
                 command.TurnOn();
                 command.Alert = Alert.Once;
+                command.Brightness = 255;
                 foreach (var item in colors)
                 {
                     command.SetColor(new RGBColor(item));

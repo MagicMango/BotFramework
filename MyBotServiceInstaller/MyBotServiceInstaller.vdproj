@@ -597,6 +597,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3161145C0F3D4B8C8A3218A85248ECAC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3410FCB92DA45E997231EACB9B94E8DC"
         "OwnerKey" = "8:_20B7041C7C164F79A25DB4B6555492F9"
         "MsmSig" = "8:_UNDEFINED"
@@ -4900,6 +4906,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Client, Version=3.0.4.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_0355399389A24C52CA1C159B91EB545B"
+                    {
+                    "Name" = "8:TwitchLib.Client.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Client.dll"
             "TargetName" = "8:"
@@ -5205,6 +5216,11 @@
             "AssemblyAsmDisplayName" = "8:EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_0C7669ADBEECB6C096C74245B9D0557E"
+                    {
+                    "Name" = "8:EntityFramework.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:EntityFramework.dll"
             "TargetName" = "8:"
@@ -5758,6 +5774,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Api.Helix, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_2279EA9E6593CC050E53704412410F0D"
+                    {
+                    "Name" = "8:TwitchLib.Api.Helix.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Api.Helix.dll"
             "TargetName" = "8:"
@@ -5939,6 +5960,11 @@
             "AssemblyAsmDisplayName" = "8:DSharpPlus.VoiceNext, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_2C11C9D8D66A96E1DD10E11C9D55BFE3"
+                    {
+                    "Name" = "8:DSharpPlus.VoiceNext.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:DSharpPlus.VoiceNext.dll"
             "TargetName" = "8:"
@@ -6144,6 +6170,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3161145C0F3D4B8C8A3218A85248ECAC"
+            {
+            "SourcePath" = "8:..\\WebServer\\public\\index.html"
+            "TargetName" = "8:index.html"
+            "Tag" = "8:"
+            "Folder" = "8:_038241420CBB4216A5404BD75E4608E8"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3410FCB92DA45E997231EACB9B94E8DC"
             {
             "AssemblyRegister" = "3:1"
@@ -6151,6 +6197,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Api.V5, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_3410FCB92DA45E997231EACB9B94E8DC"
+                    {
+                    "Name" = "8:TwitchLib.Api.V5.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Api.V5.dll"
             "TargetName" = "8:"
@@ -6270,6 +6321,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Api.Core.Enums, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_358F912A3A198A819FFA96B81C231415"
+                    {
+                    "Name" = "8:TwitchLib.Api.Core.Enums.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Api.Core.Enums.dll"
             "TargetName" = "8:"
@@ -7474,6 +7530,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Communication, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_641C209FE647F6893D0EA1448D16F565"
+                    {
+                    "Name" = "8:TwitchLib.Communication.DLL"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Communication.DLL"
             "TargetName" = "8:"
@@ -7500,6 +7561,11 @@
             "AssemblyAsmDisplayName" = "8:DSharpPlus, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_6511DBC3445F5CB2F51DFFE8217FD7EC"
+                    {
+                    "Name" = "8:DSharpPlus.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:DSharpPlus.dll"
             "TargetName" = "8:"
@@ -7557,6 +7623,11 @@
             "AssemblyAsmDisplayName" = "8:Q42.HueApi.ColorConverters, Version=3.8.1.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_68607882E1D00FE075DAB7E783DBBF26"
+                    {
+                    "Name" = "8:Q42.HueApi.ColorConverters.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Q42.HueApi.ColorConverters.dll"
             "TargetName" = "8:"
@@ -7645,6 +7716,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Client.Enums, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_70007D54D152A9091B3D31FD3B49BEFA"
+                    {
+                    "Name" = "8:TwitchLib.Client.Enums.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Client.Enums.dll"
             "TargetName" = "8:"
@@ -7981,6 +8057,11 @@
             "AssemblyAsmDisplayName" = "8:DiscordBot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_80C84210DF861F2BFC55CEAC7FF3FCD2"
+                    {
+                    "Name" = "8:DiscordBot.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:DiscordBot.dll"
             "TargetName" = "8:"
@@ -8379,6 +8460,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Api.V5.Models, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_8CDC9B0DE497B36904FD314184DD24C3"
+                    {
+                    "Name" = "8:TwitchLib.Api.V5.Models.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Api.V5.Models.dll"
             "TargetName" = "8:"
@@ -8529,6 +8615,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Api, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_93195E0BBC090719FDEE284C0FCD52EC"
+                    {
+                    "Name" = "8:TwitchLib.Api.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Api.dll"
             "TargetName" = "8:"
@@ -8927,6 +9018,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Api.Core, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_A1DB78FAA9F62D7BC4C348615159B189"
+                    {
+                    "Name" = "8:TwitchLib.Api.Core.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Api.Core.dll"
             "TargetName" = "8:"
@@ -9356,6 +9452,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Api.Helix.Models, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_A7E5E6BBD41A37C7C2592A0657AEC084"
+                    {
+                    "Name" = "8:TwitchLib.Api.Helix.Models.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Api.Helix.Models.dll"
             "TargetName" = "8:"
@@ -9568,6 +9669,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Client.Models, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_B4BE1B80B1506C6AB81F33388BAF36CA"
+                    {
+                    "Name" = "8:TwitchLib.Client.Models.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Client.Models.dll"
             "TargetName" = "8:"
@@ -9594,6 +9700,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchBot, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_B5AC15E1266357E063EFE2CABF4231B8"
+                    {
+                    "Name" = "8:TwitchBot.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchBot.dll"
             "TargetName" = "8:"
@@ -9930,6 +10041,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Api.Core.Models, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_BFAF9A031D2FD2A6B38CB9BA7E440C58"
+                    {
+                    "Name" = "8:TwitchLib.Api.Core.Models.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Api.Core.Models.dll"
             "TargetName" = "8:"
@@ -10204,6 +10320,11 @@
             "AssemblyAsmDisplayName" = "8:DSharpPlus.CommandsNext, Version=3.2.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_C63E1C84426AFB9E8DC1071257D584FC"
+                    {
+                    "Name" = "8:DSharpPlus.CommandsNext.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:DSharpPlus.CommandsNext.dll"
             "TargetName" = "8:"
@@ -10819,6 +10940,11 @@
             "AssemblyAsmDisplayName" = "8:TwitchLib.Api.Core.Interfaces, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_E2F15A0C1526832D0558213631360B54"
+                    {
+                    "Name" = "8:TwitchLib.Api.Core.Interfaces.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:TwitchLib.Api.Core.Interfaces.dll"
             "TargetName" = "8:"
@@ -11093,6 +11219,11 @@
             "AssemblyAsmDisplayName" = "8:WebServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_ECF79D9DE6E0BEC04023EA7C4B1FD4F5"
+                    {
+                    "Name" = "8:WebServer.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:WebServer.dll"
             "TargetName" = "8:"
@@ -11181,6 +11312,11 @@
             "AssemblyAsmDisplayName" = "8:Q42.HueApi, Version=3.8.2.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_F72B96B18BE5DF66CAD9B5674A9B39D0"
+                    {
+                    "Name" = "8:Q42.HueApi.DLL"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:Q42.HueApi.DLL"
             "TargetName" = "8:"
@@ -11269,6 +11405,11 @@
             "AssemblyAsmDisplayName" = "8:BotCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
+                    "_FA8C5434F2E733199B2C2CE112E906DC"
+                    {
+                    "Name" = "8:BotCore.dll"
+                    "Attributes" = "3:512"
+                    }
                 }
             "SourcePath" = "8:BotCore.dll"
             "TargetName" = "8:"
@@ -11439,6 +11580,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_038241420CBB4216A5404BD75E4608E8"
+                    {
+                    "Name" = "8:public"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_D63849F63BC645AB8655AE622E16E9AC"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_E47174F537AD4E6DA91650E388F60F38"
@@ -11469,7 +11621,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:MyBotServiceInstaller"
         "ProductCode" = "8:{5D9D425A-6553-400D-8B3B-B9E01F3E852F}"
-        "PackageCode" = "8:{80FDD9B3-75EC-429A-B382-D2E91F947DEC}"
+        "PackageCode" = "8:{C82469C0-D371-449D-98AD-BCB301E6F734}"
         "UpgradeCode" = "8:{153FECE5-791C-4247-A6F2-4FB0C5057CA3}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -12067,34 +12219,6 @@
             "OutputConfiguration" = "8:"
             "OutputGroupCanonicalName" = "8:Built"
             "OutputProjectGuid" = "8:{1F1B664A-8567-4033-94A8-4D79D3187A12}"
-            "ShowKeyOutput" = "11:TRUE"
-                "ExcludeFilters"
-                {
-                }
-            }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5786F7CE93EC4FE5A5826F0DC1D4A444"
-            {
-            "SourcePath" = "8:"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_BA9D50E970BE45D583A95475FC30A8B5"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            "ProjectOutputGroupRegister" = "3:1"
-            "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:ContentFiles"
-            "OutputProjectGuid" = "8:{0CC67E22-E32B-4EE4-9E5B-EF79651529EA}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
