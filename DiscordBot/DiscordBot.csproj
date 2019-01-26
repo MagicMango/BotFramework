@@ -66,9 +66,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BotCore\BotCore.csproj">
-      <Project>{7EC2849D-E044-4416-8753-31E7DA7D09ED}</Project>
-      <Name>BotCore</Name>
+    <ProjectReference Include="..\BotCore.Standard\BotCore.Standard.csproj">
+      <Project>{C766C80B-9CBE-44BA-8E63-27AAA5D71943}</Project>
+      <Name>BotCore.Standard</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

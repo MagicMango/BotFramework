@@ -1,5 +1,4 @@
-﻿using BotCore.Model.Entities;
-using System;
+﻿using System;
 
 namespace BotCore.Interfaces.Repository
 {
@@ -10,6 +9,6 @@ namespace BotCore.Interfaces.Repository
         /// <see cref="String.Format(string, string, string)"/>
         /// </summary>
         /// <returns></returns>
-        HatePhrases GetRandomHatePhrase();
+        IHatePhrase GetRandomHatePhrase();
     }
 }

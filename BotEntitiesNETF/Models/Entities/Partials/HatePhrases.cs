@@ -1,6 +1,8 @@
-﻿namespace BotCore.Model.Entities
+﻿using BotCore.Interfaces;
+
+namespace BotEntitiesNETF.Models.Entities
 {
-    public partial class HatePhrases
+    public partial class HatePhrases: IHatePhrase
     {
         public HatePhrases()
         {

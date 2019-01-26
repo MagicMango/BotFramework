@@ -1,4 +1,4 @@
-﻿// Die T4-Codegenerierung ist für Modell 'C:\Users\stefa\Documents\Visual Studio 2017\Projects\BotCore\BotCore\Model\Entities\BotModels.edmx' aktiviert. 
+﻿// Die T4-Codegenerierung ist für Modell 'C:\Users\stefa\Documents\Visual Studio 2017\Projects\BotCore\BotEntitiesNETF\Models\Entities\BotModels.edmx' aktiviert. 
 // Um die Generierung von Legacycode zu aktivieren, ändern Sie den Wert der Designer-Eigenschaft 'Code Generation Strategy'
 // in 'Legacy ObjectContext'. Diese Eigenschaft wird im Eigenschaftenfenster angezeigt, wenn das Modell
 // im Designer geöffnet ist.

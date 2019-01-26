@@ -65,9 +65,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BotCore\BotCore.csproj">
-      <Project>{7EC2849D-E044-4416-8753-31E7DA7D09ED}</Project>
-      <Name>BotCore</Name>
+    <ProjectReference Include="..\BotCore.Interfaces\BotCore.Interfaces.csproj">
+      <Project>{EF1F78FC-FA3B-4044-A752-6C21FB7F115F}</Project>
+      <Name>BotCore.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BotCore.Standard\BotCore.Standard.csproj">
+      <Project>{C766C80B-9CBE-44BA-8E63-27AAA5D71943}</Project>
+      <Name>BotCore.Standard</Name>
     </ProjectReference>
     <ProjectReference Include="..\DiscordBot\DiscordBot.csproj">
       <Project>{CF6055C7-3CEF-4929-8DDC-23D04F8199B8}</Project>

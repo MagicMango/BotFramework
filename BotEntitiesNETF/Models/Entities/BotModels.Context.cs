@@ -7,11 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BotCore.Model.Entities
+namespace BotEntitiesNETF.Models.Entities
 {
+    using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class StreamDBBotEntities : DbContext
     {
         public StreamDBBotEntities()

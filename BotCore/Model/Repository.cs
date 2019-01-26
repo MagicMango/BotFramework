@@ -1,4 +1,4 @@
-﻿using BotCore.Model.Entities;
+﻿using BotEntitiesNETF.Models.Entities;
 using System;
 
 namespace BotCore.Model

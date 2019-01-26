@@ -1,6 +1,6 @@
 ﻿using BotCore.DependencyInjection;
 using BotCore.Interfaces.Repository;
-using BotCore.Model.Entities;
+using BotEntitiesNETF.Models.Entities;
 using System;
 
 namespace BotCore.Controller

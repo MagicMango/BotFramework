@@ -1,5 +1,6 @@
-﻿using BotCore.Interfaces.Repository;
-using BotCore.Model.Entities;
+﻿using BotCore.Interfaces;
+using BotCore.Interfaces.Repository;
+using BotEntitiesNETF.Models.Entities;
 
 namespace BotCore.Model
 {
@@ -21,7 +22,7 @@ namespace BotCore.Model
         /// <see cref="String.Format(string, string, string)"/>
         /// </summary>
         /// <returns></returns>
-        public LovePhrases GetRandomLovePhrase()
+        public ILovePhrase GetRandomLovePhrase()
         {
             return new LovePhrases() { Phrase = "{0} loves {1}" };
         }

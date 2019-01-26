@@ -1,6 +1,9 @@
-﻿namespace BotCore.Model.Entities
+﻿using BotCore.Interfaces;
+
+namespace BotEntitiesNETF.Models.Entities
 {
-    public partial class LovePhrases
+
+    public partial class LovePhrases: ILovePhrase
     {
         public LovePhrases()
         {

@@ -7,12 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace BotCore.Model.Entities
+namespace BotEntitiesNETF.Models.Entities
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class HatePhrases
+    public partial class LovePhrases
     {
         public int Id { get; set; }
         public string Phrase { get; set; }
