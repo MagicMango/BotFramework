@@ -24,9 +24,9 @@ namespace BotService
                 .Bind<ILoveRepository, LoveRepository>()
                 .Bind<IHateRepository, HateRepository>(); 
             ServiceLocator.SetKernel(wrapper);
-            ChannelHandler h = new ChannelHandler();
+            MangoDiscordHandler h = new MangoDiscordHandler();
             var t = h.GetBot;
-            var b = new Bot();
+            var b = new TwitchBot.MangoTwitchBot();
             
             List<Route> routen = new List<Route>() {
                 new Route("", (response)=> ""),

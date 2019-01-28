@@ -19,8 +19,8 @@ namespace MyServiceCore
                 .Bind<ILoveRepository, LoveRepository>()
                 .Bind<IHateRepository, HateRepository>();
             ServiceLocator.SetKernel(wrapper);
-            ChannelHandler h = new ChannelHandler();
-            Bot b = new Bot();
+            MangoDiscordHandler h = new MangoDiscordHandler();
+            MangoTwitchBot b = new MangoTwitchBot();
             var t = h.GetBot;
             t.Wait();
 
@@ -30,7 +30,6 @@ namespace MyServiceCore
             };
             HttpHandler handler = new HttpHandler(routen, new Route("NotFound", (response) => "<HTML><BODY><h1>Page Not Found</h1></BODY></HTML>"));
             handler.Start();
-            Console.ReadKey();
         }
 
         public static object SaveConfiguration(object conf)

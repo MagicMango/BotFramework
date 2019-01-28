@@ -11,17 +11,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotService", "BotService\Bo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotTestConsole", "BotTestConsole\BotTestConsole.csproj", "{DD114B46-652E-4CF7-9BE8-2820B345D136}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyBotServiceInstaller", "MyBotServiceInstaller\MyBotServiceInstaller.vdproj", "{44105A9F-E743-4A1B-8EE2-FBECAF2F4D78}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServer", "WebServer\WebServer.csproj", "{0CC67E22-E32B-4EE4-9E5B-EF79651529EA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyServiceCore", "MyServiceCore\MyServiceCore.csproj", "{0B324FFC-FD31-4D43-8AC0-1AC33D34AE8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotCore.Interfaces", "BotCore.Interfaces\BotCore.Interfaces.csproj", "{EF1F78FC-FA3B-4044-A752-6C21FB7F115F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotCore.Interfaces", "BotCore.Interfaces\BotCore.Interfaces.csproj", "{EF1F78FC-FA3B-4044-A752-6C21FB7F115F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotCore.Standard", "BotCore.Standard\BotCore.Standard.csproj", "{C766C80B-9CBE-44BA-8E63-27AAA5D71943}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotCore.Standard", "BotCore.Standard\BotCore.Standard.csproj", "{C766C80B-9CBE-44BA-8E63-27AAA5D71943}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotEntities.Standard", "BotEntities.Standard\BotEntities.Standard.csproj", "{DB9B2959-B9A5-4362-8D25-106651EAB43E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BotEntities.Standard", "BotEntities.Standard\BotEntities.Standard.csproj", "{DB9B2959-B9A5-4362-8D25-106651EAB43E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,12 +61,6 @@ Global
 		{DD114B46-652E-4CF7-9BE8-2820B345D136}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DD114B46-652E-4CF7-9BE8-2820B345D136}.Release|x86.ActiveCfg = Release|Any CPU
 		{DD114B46-652E-4CF7-9BE8-2820B345D136}.Release|x86.Build.0 = Release|Any CPU
-		{44105A9F-E743-4A1B-8EE2-FBECAF2F4D78}.Debug|Any CPU.ActiveCfg = Debug
-		{44105A9F-E743-4A1B-8EE2-FBECAF2F4D78}.Debug|x86.ActiveCfg = Debug
-		{44105A9F-E743-4A1B-8EE2-FBECAF2F4D78}.Debug|x86.Build.0 = Debug
-		{44105A9F-E743-4A1B-8EE2-FBECAF2F4D78}.Release|Any CPU.ActiveCfg = Release
-		{44105A9F-E743-4A1B-8EE2-FBECAF2F4D78}.Release|x86.ActiveCfg = Release
-		{44105A9F-E743-4A1B-8EE2-FBECAF2F4D78}.Release|x86.Build.0 = Release
 		{0CC67E22-E32B-4EE4-9E5B-EF79651529EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0CC67E22-E32B-4EE4-9E5B-EF79651529EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0CC67E22-E32B-4EE4-9E5B-EF79651529EA}.Debug|x86.ActiveCfg = Debug|Any CPU

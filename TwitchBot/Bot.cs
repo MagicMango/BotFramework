@@ -11,12 +11,12 @@ using TwitchLib.Client.Models;
 
 namespace TwitchBot
 {
-    public class Bot
+    public class MangoTwitchBot
     {
         private static TwitchAPI api;
         private TwitchClient client;
 
-        public Bot()
+        public MangoTwitchBot()
         {
             ConnectionCredentials credentials = new ConnectionCredentials(
                 ConfigReader.GetStringValue("mybotservice:twitchbot:username"), 

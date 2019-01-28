@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace DiscordBotCore.Handler
 {
-    public class ChannelHandler
+    public class MangoDiscordHandler
     {
         public DiscordClient Client { get; set; }
         public CommandsNextModule Commands { get; set; }

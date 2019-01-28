@@ -7,7 +7,7 @@ namespace BotEntitiesNETCore.Models.Entities
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("server=raspbx;user id=StreamUser;password=?6#)[#mwBXKfY`]b;persistsecurityinfo=True;database=StreamDBBot");
+            optionsBuilder.UseMySQL("server=localhost;user id=StreamUser;password=?6#)[#mwBXKfY`]b;persistsecurityinfo=True;database=BotDB");
         }
 
         public virtual DbSet<LovePhrases> LovePhrases { get; set; }

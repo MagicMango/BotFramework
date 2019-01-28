@@ -20,8 +20,8 @@ namespace BotTestConsole
                 .Bind<ILoveRepository, LoveRepository>()
                 .Bind<IHateRepository, HateRepository>();
             ServiceLocator.SetKernel(wrapper);
-            ChannelHandler h = new ChannelHandler();
-            Bot b = new Bot();
+            MangoDiscordHandler h = new MangoDiscordHandler();
+            TwitchBot.MangoTwitchBot b = new TwitchBot.MangoTwitchBot();
             var t = h.GetBot;
             t.Wait();
             Console.ReadKey();

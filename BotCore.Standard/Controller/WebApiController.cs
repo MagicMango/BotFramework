@@ -12,7 +12,7 @@ namespace BotCore.Controller
         /// <returns></returns>
         public static string GetRandomChuckNorrrisJoke()
         {
-            /* Task<string> t = Task.Run(async () =>
+            Task<string> t = Task.Run(async () =>
               {
                   HttpClient client = new HttpClient();
                   HttpResponseMessage response = await client.GetAsync("https://api.chucknorris.io/jokes/random");
@@ -30,8 +30,7 @@ namespace BotCore.Controller
               dynamic result = JsonConvert.DeserializeObject(t.Result);
               //Match m = Regex.Match(, @"\""value\""\:\""([^""]*)");
               //return m.Groups[1].Value;
-              return (string)result?.value;*/
-            return "";
+              return (string)result?.value;
         }
     }
 }
