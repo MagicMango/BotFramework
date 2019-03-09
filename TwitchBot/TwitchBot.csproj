@@ -164,6 +164,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BotCore.Interfaces\BotCore.Interfaces.csproj">
+      <Project>{EF1F78FC-FA3B-4044-A752-6C21FB7F115F}</Project>
+      <Name>BotCore.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BotCore.Standard\BotCore.Standard.csproj">
       <Project>{C766C80B-9CBE-44BA-8E63-27AAA5D71943}</Project>
       <Name>BotCore.Standard</Name>

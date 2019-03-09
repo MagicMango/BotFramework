@@ -15,7 +15,7 @@ namespace DiscordBot.Commands
         {
             string[] options = colorandmode.Split(' ');
             
-            await ctx.RespondAsync(ServiceLocator.GetInstanceFromFunction<IControlLight>().ControlLights(options[0], options[1]));
+            await ctx.RespondAsync(ServiceLocator.GetInstance<IControlLight>().ControlLights(options[0], options[1]));
         }
     }
 }

@@ -23,14 +23,20 @@ namespace BotCore.DependencyInjection
         /// <returns>IWrappedKernel for fluent Binding <see cref="IWrappedKernel"/></returns>
         public IWrappedKernel Bind<Tinterface, Timplementation>() where Timplementation : Tinterface, new()
         {
-            if (definitions.ContainsKey(typeof(Tinterface))) throw new InvalidOperationException(string.Format("Already bound Interface: {0}, an interface can only be bound once.", typeof(Tinterface).FullName));
+            if (definitions.ContainsKey(typeof(Tinterface)) || lampbdadefinitions.ContainsKey(typeof(Tinterface))) throw new InvalidOperationException(string.Format("Already bound Interface: {0}, an interface can only be bound once.", typeof(Tinterface).FullName));
             definitions.Add(typeof(Tinterface), typeof(Timplementation));
             return this;
         }
-
+        /// <summary>
+        /// Register a implementation to a interface.
+        /// Will throw InvalidOperationException on tryingin to bind the same Interface again.
+        /// </summary>
+        /// <typeparam name="Tinterface">Interface of a service</typeparam>
+        /// <param name="Function">Function which will return the concrete Type to an Interface</param>
+        /// <returns></returns>
         public IWrappedKernel Bind<Tinterface>(Func<object> Function)
         {
-            if (lampbdadefinitions.ContainsKey(typeof(Tinterface))) throw new InvalidOperationException(string.Format("Already bound Interface: {0}, an interface can only be bound once.", typeof(Tinterface).FullName));
+            if (lampbdadefinitions.ContainsKey(typeof(Tinterface)) || lampbdadefinitions.ContainsKey(typeof(Tinterface))) throw new InvalidOperationException(string.Format("Already bound Interface: {0}, an interface can only be bound once.", typeof(Tinterface).FullName));
             lampbdadefinitions.Add(typeof(Tinterface), Function);
             return this;
         }
@@ -41,18 +47,22 @@ namespace BotCore.DependencyInjection
         /// <returns></returns>
         public T GetInstance<T>() where T : IBase
         {
-            if (!definitions.ContainsKey(typeof(T))) throw new InvalidOperationException(string.Format("No class bound for Interface: {0}.", typeof(T).FullName));
-            Type t = null;
-            definitions.TryGetValue(typeof(T), out t);
-            return (T)Activator.CreateInstance(t);
+            bool objectDefinitions = definitions.ContainsKey(typeof(T));
+            bool functionDefinitions = lampbdadefinitions.ContainsKey(typeof(T));
+            if (!(objectDefinitions || functionDefinitions)) throw new InvalidOperationException(string.Format("No class bound for Interface: {0}.", typeof(T).FullName));
+            if (objectDefinitions)
+            {
+                Type t = null;
+                definitions.TryGetValue(typeof(T), out t);
+                return (T)Activator.CreateInstance(t);
+            }
+            else
+            {
+                Func<object> o;
+                lampbdadefinitions.TryGetValue(typeof(T), out o);
+                return (T)o.Invoke();
+            }
         }
 
-        public object GetInstanceFromFunction<T>() where T : IBase
-        {
-            if (!lampbdadefinitions.ContainsKey(typeof(T))) throw new InvalidOperationException(string.Format("No class bound for Interface: {0}.", typeof(T).FullName));
-            Func<object> t = null;
-            lampbdadefinitions.TryGetValue(typeof(T), out t);
-            return t.Invoke();
-        }
     }
 }

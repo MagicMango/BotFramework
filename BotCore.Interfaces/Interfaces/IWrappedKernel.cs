@@ -20,6 +20,5 @@ namespace BotCore.Interfaces
         /// <returns>IWrappedKernel for fluent Binding <see cref="IWrappedKernel"/></returns>
         IWrappedKernel Bind<Tinterface, Timplementation>() where Timplementation : Tinterface, new();
         IWrappedKernel Bind<Tinterface>(Func<object> Function);
-        object GetInstanceFromFunction<T>() where T : IBase;
     }
 }

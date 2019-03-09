@@ -1,4 +1,6 @@
 ﻿using BotCore.Controller;
+using BotCore.DependencyInjection;
+using BotCore.Interfaces;
 using BotCore.Util;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,41 +55,54 @@ namespace TwitchBot
         private void Client_OnMessageReceived(object sender, OnMessageReceivedArgs e)
         {
             Task<List<ChatterFormatted>> t = null;
-            switch (e.ChatMessage.Message)
+            if (e.ChatMessage.Message.StartsWith("!"))
             {
-                case "!love":
-                    t = Task.Run(async () =>
-                                            await api.Undocumented.GetChattersAsync(e.ChatMessage.Channel)
-                                    );
-                    t.Wait();
-                    client.SendMessage(e.ChatMessage.Channel, 
-                        new LoveController()
-                        .GetRandomLovePhrase(e.ChatMessage.Username, 
-                            t.Result
-                            .Where(y=>y.Username != ConfigReader.GetStringValue("mybotservice:twitchbot:username"))
-                            .Select(x => x.Username)
-                            .ToArray())
-                    );
-                    break;
-                case "!hate":
-                    t = Task.Run(async () =>
-                                            await api.Undocumented.GetChattersAsync(e.ChatMessage.Channel)
-                                    );
-                    t.Wait();
-                    client.SendMessage(e.ChatMessage.Channel,
-                        new HateController()
-                        .GetRandomHatePhrase(e.ChatMessage.Username,
-                            t.Result
-                            .Where(y => y.Username != ConfigReader.GetStringValue("mybotservice:twitchbot:username"))
-                            .Select(x => x.Username)
-                            .ToArray())
-                    );
-                    break;
-                case "!chucknorris":
-                    client.SendMessage(e.ChatMessage.Channel, WebApiController.GetRandomChuckNorrrisJoke());
-                    break;
+                string[] split = e.ChatMessage.Message.Split(' ');
+                switch (split[0])
+                {
+                    case "!love":
+                        t = Task.Run(async () =>
+                                                await api.Undocumented.GetChattersAsync(e.ChatMessage.Channel)
+                                        );
+                        t.Wait();
+                        client.SendMessage(e.ChatMessage.Channel,
+                            new LoveController()
+                            .GetRandomLovePhrase(e.ChatMessage.Username,
+                                t.Result
+                                .Where(y => y.Username != ConfigReader.GetStringValue("mybotservice:twitchbot:username"))
+                                .Select(x => x.Username)
+                                .ToArray())
+                        );
+                        break;
+                    case "!hate":
+                        t = Task.Run(async () =>
+                                                await api.Undocumented.GetChattersAsync(e.ChatMessage.Channel)
+                                        );
+                        t.Wait();
+                        client.SendMessage(e.ChatMessage.Channel,
+                            new HateController()
+                            .GetRandomHatePhrase(e.ChatMessage.Username,
+                                t.Result
+                                .Where(y => y.Username != ConfigReader.GetStringValue("mybotservice:twitchbot:username"))
+                                .Select(x => x.Username)
+                                .ToArray())
+                        );
+                        break;
+                    case "!chucknorris":
+                        client.SendMessage(e.ChatMessage.Channel, WebApiController.GetRandomChuckNorrrisJoke());
+                        break;
+                    case "!light":
+                        try
+                        {
+                            client.SendMessage(e.ChatMessage.Channel, ServiceLocator.GetInstance<IControlLight>().ControlLights(split[1], split[2]));
+                        }
+                        catch
+                        {
+                            client.SendMessage(e.ChatMessage.Channel, "You must define color and mode!");
+                        }
+                        break;
+                }
             }
-
         }
 
         private void Client_OnWhisperReceived(object sender, OnWhisperReceivedArgs e)

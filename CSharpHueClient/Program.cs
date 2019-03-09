@@ -12,7 +12,7 @@ namespace CSharpHueClient
         static void Main(string[] args)
         {
             connection = new HubConnectionBuilder()
-                .WithUrl("http://localhost:9090/huelights")
+                .WithUrl("http://www.stud-informatik.de:9090/huelights")
                 .Build();
 
             connection.Closed += async (error) =>
@@ -25,7 +25,13 @@ namespace CSharpHueClient
                 Console.WriteLine(string.Format("{0} {1} {2}", id, color, mode));
             });
             Task.Run(async () => {
-                await connection.StartAsync();
+                try
+                {
+                    await connection.StartAsync();
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
             });
             Console.ReadKey();
         }
