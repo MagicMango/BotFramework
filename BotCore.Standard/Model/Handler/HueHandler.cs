@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BotCore.Models.Handler
 {
-    public class HueHandler
+    public static class HueHandler
     {
 
         private static string[] colors = new string[] { "D60270", "FFEE8A", "ACCB52", "0038A8", "EE1289", "FF83FA", "CD9B1D", "7EC0EE" };
@@ -23,7 +23,7 @@ namespace BotCore.Models.Handler
         /// <param name="color">HEXcoded Color</param>
         /// <param name="mode">blink, normal or disco</param>
         /// <returns></returns>
-        public HueHandlerMessage ControlLight(int id, string color, string mode)
+        public static HueHandlerMessage ControlLight(int id, string color, string mode)
         {
             int cnt = 0;
             ILocalHueClient client = new LocalHueClient(ConfigReader.GetStringValue("mybotservice:hue:ip"));
@@ -67,7 +67,7 @@ namespace BotCore.Models.Handler
         /// <param name="client"></param>
         /// <param name="id"></param>
         /// <returns></returns>
-        private HueHandlerMessage DiscoMode(ILocalHueClient client, int id)
+        private static HueHandlerMessage DiscoMode(ILocalHueClient client, int id)
         {
             Task.Run(() =>
             {

@@ -31,6 +31,11 @@ namespace BotCore.DependencyInjection
         {
             return kernel.GetInstance<T>();
         }
+
+        public static T GetInstanceFromFunction<T>() where T : IBase
+        {
+            return (T)kernel.GetInstanceFromFunction<T>();
+        }
         /// <summary>
         /// Wrapper method for kernel.Bind
         /// <see cref="IWrappedKernel.Bind{Tinterface, Timplementation}"/>

@@ -12,6 +12,7 @@ namespace BotCore.DependencyInjection
     public class MangoKernel : IWrappedKernel
     {
         private static Dictionary<Type, Type> definitions = new Dictionary<Type, Type>();
+        private static Dictionary<Type, Func<object>> lampbdadefinitions = new Dictionary<Type, Func<object>>();
         /// <summary>
         /// Register a implementation to a interface.
         /// Will throw InvalidOperationException on tryingin to bind the same Interface again.
@@ -26,6 +27,13 @@ namespace BotCore.DependencyInjection
             definitions.Add(typeof(Tinterface), typeof(Timplementation));
             return this;
         }
+
+        public IWrappedKernel Bind<Tinterface>(Func<object> Function)
+        {
+            if (lampbdadefinitions.ContainsKey(typeof(Tinterface))) throw new InvalidOperationException(string.Format("Already bound Interface: {0}, an interface can only be bound once.", typeof(Tinterface).FullName));
+            lampbdadefinitions.Add(typeof(Tinterface), Function);
+            return this;
+        }
         /// <summary>
         /// Will return a concrete implementation of an interface as Interface
         /// </summary>
@@ -37,6 +45,14 @@ namespace BotCore.DependencyInjection
             Type t = null;
             definitions.TryGetValue(typeof(T), out t);
             return (T)Activator.CreateInstance(t);
+        }
+
+        public object GetInstanceFromFunction<T>() where T : IBase
+        {
+            if (!lampbdadefinitions.ContainsKey(typeof(T))) throw new InvalidOperationException(string.Format("No class bound for Interface: {0}.", typeof(T).FullName));
+            Func<object> t = null;
+            lampbdadefinitions.TryGetValue(typeof(T), out t);
+            return t.Invoke();
         }
     }
 }

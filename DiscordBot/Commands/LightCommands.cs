@@ -1,4 +1,6 @@
 ﻿using BotCore.Controller;
+using BotCore.DependencyInjection;
+using BotCore.Interfaces;
 using DiscordBot.Interfaces;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
@@ -12,7 +14,8 @@ namespace DiscordBot.Commands
         public async Task Light(CommandContext ctx, [RemainingText, Description("Color code in HEX and mode")] string colorandmode)
         {
             string[] options = colorandmode.Split(' ');
-            await ctx.RespondAsync(HueController.ControlLight(options[0], options[1]));
+            
+            await ctx.RespondAsync(ServiceLocator.GetInstanceFromFunction<IControlLight>().ControlLights(options[0], options[1]));
         }
     }
 }
