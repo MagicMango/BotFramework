@@ -10,5 +10,6 @@ namespace BotCore.Interfaces.Repository
         /// </summary>
         /// <returns></returns>
         IHatePhrase GetRandomHatePhrase();
+        string GetRandomHatePhrase(string username, string[] loveSeeker);
     }
 }

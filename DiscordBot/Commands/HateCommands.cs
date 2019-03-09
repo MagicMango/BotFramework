@@ -1,4 +1,6 @@
 ﻿using BotCore.Controller;
+using BotCore.DependencyInjection;
+using BotCore.Interfaces.Repository;
 using DiscordBot.Interfaces;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
@@ -16,8 +18,7 @@ namespace DiscordBot.Commands
             var hateSeeker = guildMembers.Where(x => x.Id != ctx.Member.Id && x.Id != ctx.Client.CurrentUser.Id).ToArray();
             if (hateSeeker.Count() > 0)
             {
-                HateController HateController = new HateController();
-                await ctx.RespondAsync(HateController.GetRandomHatePhrase(ctx.Member.Username, hateSeeker.Select(x=>x.Username).ToArray()));
+                await ctx.RespondAsync(ServiceLocator.GetInstance<IHateRepository>().GetRandomHatePhrase(ctx.Member.Username, hateSeeker.Select(x=>x.Username).ToArray()));
             }
             else
             {

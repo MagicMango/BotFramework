@@ -1,4 +1,5 @@
-﻿using BotCore.Controller;
+﻿using BotCore.DependencyInjection;
+using BotCore.Interfaces.Repository;
 using DiscordBot.Interfaces;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
@@ -16,8 +17,7 @@ namespace DiscordBot.Commands
             var loveSeeker = guildMembers.Where(x => x.Id != ctx.Member.Id && x.Id != ctx.Client.CurrentUser.Id).ToArray();
             if (loveSeeker.Count() > 0)
             {
-                LoveController loveController = new LoveController();
-                await ctx.RespondAsync(loveController.GetRandomLovePhrase(ctx.Member.Username, loveSeeker.Select(x=>x.Username).ToArray()));
+                await ctx.RespondAsync(ServiceLocator.GetInstance<ILoveRepository>().GetRandomLovePhrase(ctx.Member.Username, loveSeeker.Select(x=>x.Username).ToArray()));
             }
             else
             {

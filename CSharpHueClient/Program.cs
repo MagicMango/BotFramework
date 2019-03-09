@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.SignalR.Client;
+﻿using BotCore.Models.Handler;
+using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Threading.Tasks;
 
@@ -22,12 +23,13 @@ namespace CSharpHueClient
             };
 
             connection.On<int, string, string>("ControlLight", (id, color, mode) => {
-                Console.WriteLine(string.Format("{0} {1} {2}", id, color, mode));
+                HueHandler.ControlLight(id, color, mode);
             });
             Task.Run(async () => {
                 try
                 {
                     await connection.StartAsync();
+                    Console.WriteLine("connection established");
                 }catch(Exception e)
                 {
                     Console.WriteLine(e.Message);

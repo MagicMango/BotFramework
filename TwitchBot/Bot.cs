@@ -1,6 +1,7 @@
 ﻿using BotCore.Controller;
 using BotCore.DependencyInjection;
 using BotCore.Interfaces;
+using BotCore.Interfaces.Repository;
 using BotCore.Util;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,7 +67,7 @@ namespace TwitchBot
                                         );
                         t.Wait();
                         client.SendMessage(e.ChatMessage.Channel,
-                            new LoveController()
+                            ServiceLocator.GetInstance<ILoveRepository>()
                             .GetRandomLovePhrase(e.ChatMessage.Username,
                                 t.Result
                                 .Where(y => y.Username != ConfigReader.GetStringValue("mybotservice:twitchbot:username"))
@@ -80,7 +81,7 @@ namespace TwitchBot
                                         );
                         t.Wait();
                         client.SendMessage(e.ChatMessage.Channel,
-                            new HateController()
+                            ServiceLocator.GetInstance<IHateRepository>()
                             .GetRandomHatePhrase(e.ChatMessage.Username,
                                 t.Result
                                 .Where(y => y.Username != ConfigReader.GetStringValue("mybotservice:twitchbot:username"))
